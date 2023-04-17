@@ -2,12 +2,11 @@ import os
 import sys
 import random
 
-START_CLUE = 2
+START_CLUE = 1
 LAST_CLUE = 12
-CLUE_SPACE = 100000
-#CLUE_SPACE = 1000
+CLUE_SPACE = 10000
 # should be consecutive digits of the form 1234...
-FIRST_CLUE = 12345
+FIRST_CLUE = 1234
 
 def zero_pad(clue):
     l = len(str(clue))
@@ -17,9 +16,11 @@ def zero_pad(clue):
     else:
         return str(clue)
 
-def gen_clue_list(first, last, space, secret):
+def gen_clue_list(first, last, space):
+    with open(".seed","r") as seedfile:
+        seed = int(seedfile.readline())
     R = random.Random()
-    R.seed(secret)
+    R.seed(seed)
     clue_indexes = []
     for i in range(first, last+1):
         clue_indexes.append(R.randint(1, space))
@@ -39,11 +40,13 @@ if __name__ == "__main__":
     if (result):
         sys.exit("Clues folder already exists.")
 
-    if (not result):
-        os.mkdir("clues")
+    os.mkdir("clues")
+    seed = random.Random().randrange(1000000,9999999)
+    with open(".seed", "w") as seedfile:
+        print(seed, file=seedfile)
 
     clue_indexes = gen_clue_list(START_CLUE, LAST_CLUE,
-                                 CLUE_SPACE, secret_number)
+                                 CLUE_SPACE)
 
     template_names = os.listdir(".clue-templates")
     template_names.sort()
@@ -76,3 +79,4 @@ if __name__ == "__main__":
             else:
                 file_name.write("Clue: \n")
     print("Done hiding clues.")
+    print("You can find your first clue at clues/12345/clue")
