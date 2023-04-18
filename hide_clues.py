@@ -4,9 +4,9 @@ import random
 
 START_CLUE = 1
 LAST_CLUE = 12
-CLUE_SPACE = 10000
+CLUE_SPACE = 100000
 # should be consecutive digits of the form 1234...
-FIRST_CLUE = 1234
+FIRST_CLUE = 12345
 
 def zero_pad(clue):
     l = len(str(clue))
