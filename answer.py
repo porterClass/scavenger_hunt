@@ -31,6 +31,9 @@ def check_answer(clue, answer):
     elif (clue == 10):
         return answer in ("-k 5 -n -r", "-k 5 -r -n", "-r -k 5 -n", "-r -n -k 5",\
             "-n -r -k 5", "-n -k 5 -r", "-n -r", "-r -n")
+    elif (clue == 11):
+        if answer == gc.zero_pad(gc.gen_clue_list(gc.START_CLUE, gc.LAST_CLUE, gc.CLUE_SPACE)[11]):
+            exit("Congratulations on finding the final clue!")
 
 
 if __name__ == "__main__":
