@@ -44,6 +44,6 @@ is mapped to the hard drive.
 
 Your hint for clue 4 is the file `/etc/hostname`. This file contains a single
 word, which is the name of your computer. This name is your hint. Remember we
-can find the next hint by typing
+can find the next clue by going to the scavenger-hunt directory and typing
 
-    python next_clue.py [secret number] [next clue number] [hint]
+    python3 answer.py

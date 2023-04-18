@@ -15,5 +15,5 @@ in the `/bin/` directory. `which` itself is a program so you could try:
 
 #### Finding Clue 7 ####
 
-`python2` is a program we have been using to generate and test our clues. Your 
-next hint is the location of the `python2` program.
+`python3` is a program we have been using to generate and test our clues. Your 
+next hint is the location of the `python3` program.

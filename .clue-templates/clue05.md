@@ -29,5 +29,5 @@ The `HOME` variable should make sense at this point.
 #### Find Clue 6 ####
 
 The `PATH` variable tells the computer where programs are. Each path that could 
-contain a program is placed between colons. Your hint for the next clue is the 
+contain a program is placed between colons. Your answer for the next clue is the 
 first path listed in your `PATH`.

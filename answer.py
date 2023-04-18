@@ -3,6 +3,7 @@ import sys
 import random
 import hashlib
 import hide_clues as gc
+import subprocess
 
 def check_answer(clue, answer):
     if (clue == 1):
@@ -18,18 +19,18 @@ def check_answer(clue, answer):
     elif (clue == 5):
         return answer == os.getenv("PATH").split(":")[0]
     elif (clue == 6):
-        return answer == os.popen2("which python2")[1].read().strip()
+        return answer == subprocess.Popen(["which", "python3"], bufsize=0, stdout=subprocess.PIPE).stdout.read().decode("utf-8").strip()
     elif (clue == 7):
-        return answer in ["acpi", "denied"]
+        if os.geteuid() != 0:
+            exit("Please rerun the program with sudo privileges")
+        return answer == subprocess.Popen(["ls", "/sys/kernel/debug"], bufsize=0, stdout=subprocess.PIPE).stdout.read().decode("utf-8").split()[0]
     elif (clue == 8):
-        return answer == os.popen2("wc -l /usr/share/dict/words")\
-            [1].read().strip().split()[0]
+        return answer == subprocess.Popen(["wc", "-l", "/usr/share/dict/words"], bufsize=0, stdout=subprocess.PIPE).stdout.read().decode("utf-8").split()[0]
     elif (clue == 9):
-        return answer == os.popen2("grep -A 1 tactful /usr/share/dict/words")\
-            [1].read().strip().split('\n')[1]
+        return answer == subprocess.Popen(["grep", "-A", "1", "tactful", "/usr/share/dict/words"], bufsize=0, stdout=subprocess.PIPE).stdout.read().decode("utf-8").split('\n')[1]
     elif (clue == 10):
         return answer in ("-k 5 -n -r", "-k 5 -r -n", "-r -k 5 -n", "-r -n -k 5",\
-            "-n -r -k 5", "-n -k 5 -r")
+            "-n -r -k 5", "-n -k 5 -r", "-n -r", "-r -n")
 
 
 if __name__ == "__main__":
@@ -59,7 +60,7 @@ if __name__ == "__main__":
         R.seed(seed + clue_number + answer_number)
         nextclue_location = gc.zero_pad(R.randint(1, gc.CLUE_SPACE))
     next_clue_number = clue_number + 1
-    print("Assuming this is the correct answer, you can find clue {} in clues/{}".format(next_clue_number, nextclue_location))
+    print("Assuming this is the correct answer, you can find clue {} in clues/{}/clue".format(next_clue_number, nextclue_location))
     print("But remember: Garbage in, garbage out - If you gave me the wrong answer, the clue won't be there.")
 
 

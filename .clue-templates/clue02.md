@@ -38,7 +38,6 @@ subdirectories. This is a hint to your next clue location. Go to the
     This was clue 2, and your answer is the number of subdirectories in /usr
 
 
-since our secret number is 42, we want to find clue 3, and our hint is 5.
 The location of our next clue should be printed. If you get the hint wrong,
 an incorrect clue will be printed. This is an example of what is known as GIGO
 (garbage-in, garbage-out). Helpful tip: you can open more than one terminal

@@ -33,10 +33,9 @@ strange. For now, just type `:q!` to quit.
 
 #### Finding Clue 8 ####
 
-The hint is the name of the first folder listed in `/sys/kernel/debug`.
+The answer is the name of the first folder listed in `/sys/kernel/debug`.
 
 #### Help. I can't sudo ####
 
 Depending on the system you are using, you may not have permission to use `sudo`.
-In this case you can use the hint `denied`.
 

@@ -15,7 +15,7 @@ you just want one of those, you can use `-l`, `-w`, or `-c`.
 Check to see if you have the file `/usr/share/dict/words` installed. If not,
 run this:
 
-    sudo apt-get install ispell
+    sudo apt install ispell
 
 Now there is a file that acts as a dictionary for spell-checking: 
 `/usr/share/dict/words`. Your next clue is the number of words in the 

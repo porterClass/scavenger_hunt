@@ -51,4 +51,4 @@ easily overwrite an existing folder.
 #### Find Clue 5 ####
 
 Read the man page for `mv` and find an
-option to prevent overwriting. That option is your next hint.
+option to prevent overwriting. That option is your next answer.
