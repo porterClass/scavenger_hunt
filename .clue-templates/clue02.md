@@ -5,9 +5,9 @@
 What if we get lost and need to know where we are? Just type `pwd` (print
 working directory). This should print something like this:
 
-    /home/user/scavenger-hunt/clues/123456
+    /home/user/scavenger-hunt/clues/12345
 
-We are five folders deep, in a folder named `123456`.
+We are five folders deep, in a folder named `12345`.
 
 #### `cd` ####
 
@@ -34,11 +34,9 @@ To find the next clue, go to the `/usr` directory and count the number of
 subdirectories. This is a hint to your next clue location. Go to the
 `scavenger-hunt` directory, and type
 
-    python2 next_clue.py [secret number] [next clue number] [hint]
+    python3 answer.py
+    This was clue 2, and your answer is the number of subdirectories in /usr
 
-So, if there were 5 directories, we would type
-
-    python2 next_clue.py 42 3 5
 
 since our secret number is 42, we want to find clue 3, and our hint is 5.
 The location of our next clue should be printed. If you get the hint wrong,
