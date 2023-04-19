@@ -8,21 +8,9 @@ the clues and learn how to use basic Linux commands in the process.
 If you are using a new Linux install or Live CD, you may need to install
 Git first (`sudo apt-get install git` on Ubuntu). Open a terminal and type:
 
-    git clone https://github.com/pushingice/scavenger-hunt.git
+    git clone https://github.com/lothar243/scavenger_hunt.git
     cd scavenger-hunt
-
-First, choose a secret number with at least 4 digits to share with your team,
-or keep to yourself if you are working alone. Don't forget it! The secret
-number makes your clues unique, so other teams can't look over your shoulder.
-Then type:
-
-    python generate_clues.py [secret number]
-
-Any time we enclose something in square brackets, you need to replace it
-with an actual value (called an argument). For example, to get started I
-might type:
-
-    python generate_clues.py 42
+    python3 hide_clues.py
 
 This will create a subdirectory called `clues`. Be sure to keep this file
 (called the README) open in a separate viewer.
@@ -86,3 +74,8 @@ will be contained in these clue files. It's a good idea to keep track of
 all the clue folders (like `123456`) on a piece of paper. You can also do
 things like copy all the clue files to your home folder, or cut and paste
 the clue text into another file.
+
+---
+
+I obtained this project from https://github.com/pushingice/scavenger-hunt.git,
+but it seemed abandoned at the time, so I have made some changes for my own.
