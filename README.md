@@ -5,12 +5,9 @@ the clues and learn how to use basic Linux commands in the process.
 
 ## Setup ##
 
-If you are using a new Linux install or Live CD, you may need to install
-Git first (`sudo apt-get install git` on Ubuntu). Open a terminal and type:
+Open in code spaces and run 
 
-    git clone https://github.com/lothar243/scavenger_hunt.git
-    cd scavenger-hunt
-    python3 hide_clues.py
+    `python3 hide_clues.py`
 
 This will create a subdirectory called `clues`. Be sure to keep this file
 (called the README) open in a separate viewer.
