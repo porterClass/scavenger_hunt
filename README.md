@@ -7,7 +7,7 @@ the clues and learn how to use basic Linux commands in the process.
 
 Open in code spaces and run 
 
-    `python3 hide_clues.py`
+    python3 hide_clues.py
 
 This will create a subdirectory called `clues`. Be sure to keep this file
 (called the README) open in a separate viewer.
